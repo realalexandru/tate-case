@@ -1,897 +1,880 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Legal documentation and analysis of important cases, including comprehensive timelines and resources.">
+    <title>Legal Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Söhne:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg-color: #121212;
+        --text-color: rgba(255, 255, 255, 0.84);
+        --text-color-secondary: rgba(255, 255, 255, 0.54);
+        --header-bg: rgba(18, 18, 18, 0.95);
+        --border-color: rgba(255, 255, 255, 0.1);
+        --button-bg: #3498db;
+        --button-hover: #2980b9;
+        --follow-button-bg: rgb(29, 155, 240);
+        --follow-button-hover: rgb(26, 140, 216);
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="light"] {
+        --bg-color: #ffffff;
+        --text-color: rgba(0, 0, 0, 0.84);
+        --text-color-secondary: rgba(0, 0, 0, 0.54);
+        --header-bg: rgba(255, 255, 255, 0.95);
+        --border-color: rgba(0, 0, 0, 0.1);
+        --button-bg: #3498db;
+        --button-hover: #2980b9;
+        --follow-button-bg: rgb(29, 155, 240);
+        --follow-button-hover: rgb(26, 140, 216);
+        --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Söhne', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        -webkit-font-smoothing: antialiased;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .header {
+        background: var(--header-bg);
+        border-bottom: 1px solid var(--border-color);
+        padding: 0.75rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: background-color 0.3s;
+    }
+
+    .nav-container {
+        max-width: 1336px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 64px;
+    }
+
+    .logo {
+        font-family: 'Source Serif Pro', Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-color);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: var(--text-color-secondary);
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        padding: 0.5rem 0;
+    }
+
+    .nav-link:hover {
+        color: var(--text-color);
+    }
+
+    .nav-button {
+        background-color: var(--button-bg);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 99px;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+        transition: background-color 0.2s ease;
+    }
+
+    .nav-button:hover {
+        background-color: var(--button-hover);
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: opacity 0.2s;
+    }
+
+    .theme-toggle:hover {
+        opacity: 0.8;
+    }
+
+    .nav-link i {
+        margin-right: 0.5rem;
+        width: 16px;
+        text-align: center;
+    }
+
+    .nav-button i {
+        margin-right: 0.5rem;
+    }
+
+    .main-content {
+        margin-top: 65px;
+        padding: 3rem 0;
+    }
+
+    .article-container {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .page-title {
+        font-family: 'Source Serif Pro', Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 2rem;
+        letter-spacing: -0.015em;
+        color: var(--text-color);
+    }
+
+    .hero-content {
+        margin-bottom: 3rem;
+    }
+
+    .hero-content p {
+        font-family: 'Source Serif Pro', Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 21px;
+        line-height: 1.58;
+        margin-bottom: 2rem;
+        color: var(--text-color);
+    }
+
+    .tweets-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin: 2rem 0;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .tweet-container {
+        width: 100%;
+        min-width: 250px;
+        margin: 0;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+
+    .author-profile {
+        margin: 2rem 0;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .author-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .author-image {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+    }
+
+    .author-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 2px 8px var(--shadow-color);
+    }
+
+    .author-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .author-name {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+
+    .follow-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--follow-button-bg);
+        color: white;
+        border: none;
+        border-radius: 99px;
+        padding: 0.5rem 0.75rem;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: fit-content;
+        white-space: nowrap;
+        text-decoration: none;
+    }
+
+    .follow-button:hover {
+        background-color: var(--follow-button-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px var(--shadow-color);
+    }
+
+    .follow-button:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    .skip-link {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: 1em;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        text-decoration: none;
+    }
+    
+    .skip-link:focus {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    a:focus, button:focus {
+        outline: 2px solid var(--text-color);
+        outline-offset: 2px;
+    }
+
+    .author-link {
+        color: inherit;
+        text-decoration: none;
+        display: inline-block;
+        transition: color 0.2s ease;
+    }
+
+    .author-link:hover {
+        color: var(--follow-button-bg);
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+    }
+
+    .logo-image {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--border-color);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .logo-container:hover .logo-image {
+        transform: scale(1.05);
+        border-color: var(--text-color-secondary);
+    }
+
+    .logo-text {
+        font-family: 'Source Serif Pro', Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-color);
+        letter-spacing: -0.02em;
+    }
+
+    /* Hero Section */
+.hero-section {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.75), 
+        rgba(0, 0, 0, 0.6)
+    ),
+    url('https://iili.io/24Ar4FS.webp') center/cover;
+    position: relative;
+    padding: 8rem 2rem;
+    margin-bottom: 4rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-color);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: white !important; /* Forces white color regardless of theme */
+}
+
+.hero-description {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    color: white !important; /* Forces white color regardless of theme */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 99px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.hero-button.primary {
+    background: var(--follow-button-bg);
+    color: white;
+}
+
+.hero-button.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Featured Section */
+.featured-section {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.featured-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--follow-button-bg);
+    color: white;
+    border-radius: 99px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.card-content p {
+    color: var(--text-color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    color: var(--follow-button-bg);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Recent Articles */
+.recent-articles {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.article-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+}
+
+.article-date {
+    color: var(--text-color-secondary);
+    font-size: 0.875rem;
+}
+
+.article-card h3 {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    color: var(--text-color);
+}
+
+/* Resources Section */
+.resources-section {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.resource-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    color: var(--text-color);
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+}
+
+.resource-card i {
+    font-size: 2rem;
+    color: var(--follow-button-bg);
+    margin-bottom: 1rem;
+}
+
+.resource-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+    color: var(--text-color-secondary);
+    font-size: 0.875rem;
+}
+
+    @media (max-width: 1080px) {
+        .nav-container {
+            padding: 0 32px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .nav-container {
+            padding: 0 20px;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg-color);
+            flex-direction: column;
+            padding: 1rem;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .tweets-grid {
+            grid-template-columns: 1fr;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-size: 32px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+        }
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="en" data-theme="dark"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="description" content="Legal documentation and analysis of important cases, including comprehensive timelines and resources."&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Legal Documentation&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&amp;family=Söhne:wght@400;500;700&amp;display=swap" rel="stylesheet"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>:root {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--bg-color: #121212;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--text-color: rgba(255, 255, 255, 0.84);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--text-color-secondary: rgba(255, 255, 255, 0.54);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--header-bg: rgba(18, 18, 18, 0.95);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--border-color: rgba(255, 255, 255, 0.1);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--button-bg: #3498db;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--button-hover: #2980b9;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--follow-button-bg: rgb(29, 155, 240);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--follow-button-hover: rgb(26, 140, 216);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--shadow-color: rgba(0, 0, 0, 0.3);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[data-theme="light"] {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--bg-color: #ffffff;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--text-color: rgba(0, 0, 0, 0.84);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--text-color-secondary: rgba(0, 0, 0, 0.54);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--header-bg: rgba(255, 255, 255, 0.95);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--border-color: rgba(0, 0, 0, 0.1);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--button-bg: #3498db;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--button-hover: #2980b9;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--follow-button-bg: rgb(29, 155, 240);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--follow-button-hover: rgb(26, 140, 216);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>--shadow-color: rgba(0, 0, 0, 0.1);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>* {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box-sizing: border-box;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-family: 'Söhne', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>line-height: 1.6;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: var(--bg-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>-webkit-font-smoothing: antialiased;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: background-color 0.3s, color 0.3s;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.header {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: var(--header-bg);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-bottom: 1px solid var(--border-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 0.75rem 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>position: fixed;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>top: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>z-index: 1000;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: background-color 0.3s;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.nav-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>max-width: 1336px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>justify-content: space-between;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 0 64px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.logo {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-family: 'Source Serif Pro', Georgia, Cambria, "Times New Roman", Times, serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 1.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-weight: 700;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>letter-spacing: -0.02em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.nav-menu {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>gap: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.nav-link {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color-secondary);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 14px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-weight: 500;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: color 0.2s ease;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 0.5rem 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.nav-link:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.nav-button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: var(--button-bg);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 0.5rem 1rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: 99px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>cursor: pointer;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-weight: 500;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 14px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: background-color 0.2s ease;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.nav-button:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: var(--button-hover);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Theme Toggle Button */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.theme-toggle {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>cursor: pointer;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 0.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 1.2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>gap: 0.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: opacity 0.2s;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.theme-toggle:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>opacity: 0.8;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.nav-link i {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-right: 0.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 16px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.nav-button i {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-right: 0.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.main-content {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-top: 65px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 3rem 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.article-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>max-width: 680px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 0 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.page-title {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-family: 'Source Serif Pro', Georgia, Cambria, "Times New Roman", Times, serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 42px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-weight: 700;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>line-height: 1.25;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-bottom: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>letter-spacing: -0.015em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hero-content {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-bottom: 3rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hero-content p {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-family: 'Source Serif Pro', Georgia, Cambria, "Times New Roman", Times, serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 21px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>line-height: 1.58;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-bottom: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tweets-grid {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: grid;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>grid-template-columns: repeat(2, 1fr);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>gap: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 2rem 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>max-width: 1000px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tweet-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>min-width: 250px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: 4px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>overflow: hidden;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.mobile-menu-btn {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 1.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>cursor: pointer;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.author-profile {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 2rem 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding-bottom: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-bottom: 1px solid var(--border-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.author-info {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>gap: 1rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.author-image {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 48px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>height: 48px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: 50%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>object-fit: cover;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: transform 0.2s ease, box-shadow 0.2s ease;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>cursor: pointer;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.author-image:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transform: scale(1.05);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box-shadow: 0 2px 8px var(--shadow-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.author-details {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>flex-direction: column;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>gap: 0.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.author-name {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 16px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-weight: 500;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.follow-button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: inline-flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>gap: 0.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: var(--follow-button-bg);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: 99px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 0.5rem 0.75rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 13px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-weight: 500;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>cursor: pointer;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: all 0.2s ease;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: fit-content;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>white-space: nowrap;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.follow-button:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: var(--follow-button-hover);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transform: translateY(-1px);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box-shadow: 0 2px 4px var(--shadow-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.follow-button:active {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transform: translateY(0);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box-shadow: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.skip-link {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>position: absolute;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>left: -9999px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>z-index: 999;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 1em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: var(--bg-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.skip-link:focus {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>left: 50%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transform: translateX(-50%);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>a:focus, button:focus {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>outline: 2px solid var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>outline-offset: 2px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.author-link {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: inherit;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: inline-block;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: color 0.2s ease;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.author-link:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--follow-button-bg);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.logo-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>gap: 0.75rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.logo-image {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: 36px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>height: 36px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: 50%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>object-fit: cover;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border: 2px solid var(--border-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: transform 0.2s ease, border-color 0.2s ease;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.logo-container:hover .logo-image {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transform: scale(1.05);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-color: var(--text-color-secondary);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.logo-text {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-family: 'Source Serif Pro', Georgia, Cambria, "Times New Roman", Times, serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 1.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-weight: 700;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>letter-spacing: -0.02em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Hero Section */</span></p>
-<p class="p1"><span class="s1">.hero-section {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: linear-gradient(</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>rgba(0, 0, 0, 0.75),<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>rgba(0, 0, 0, 0.6)</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>url('https://iili.io/24Ar4FS.webp') center/cover;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position: relative;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 8rem 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 4rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.hero-section::before {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>content: '';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position: absolute;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>top: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>left: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>right: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bottom: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: var(--bg-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>opacity: 0.1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>z-index: 1;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.hero-content {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position: relative;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>z-index: 2;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>max-width: 800px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.page-title {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 1.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 3.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>line-height: 1.2;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: white !important; /* Forces white color regardless of theme */</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.hero-description {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 1.25rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 2.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>opacity: 0.95;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: white !important; /* Forces white color regardless of theme */</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.hero-buttons {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gap: 1rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>justify-content: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex-wrap: wrap;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.hero-button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 0.75rem 1.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 99px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-weight: 500;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transition: all 0.2s ease;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.hero-button.primary {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: var(--follow-button-bg);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: white;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.hero-button.secondary {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: rgba(255, 255, 255, 0.1);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>backdrop-filter: blur(10px);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.hero-button:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transform: translateY(-2px);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Featured Section */</span></p>
-<p class="p1"><span class="s1">.featured-section {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 2rem 1rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>max-width: 1200px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin: 0 auto 4rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.section-title {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.featured-grid {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: grid;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gap: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 0 1rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.featured-card {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 12px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>overflow: hidden;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: var(--bg-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transition: transform 0.2s ease, box-shadow 0.2s ease;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.featured-card:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transform: translateY(-4px);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 20px var(--shadow-color);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.card-image img {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>height: 200px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>object-fit: cover;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.card-content {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 1.5rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.card-tag {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: inline-block;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 0.25rem 0.75rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: var(--follow-button-bg);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 99px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.875rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 1rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.card-content h3 {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 1.5rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 1rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.card-content p {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-color-secondary);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 1.5rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.read-more {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--follow-button-bg);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-weight: 500;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: inline-flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gap: 0.5rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Recent Articles */</span></p>
-<p class="p1"><span class="s1">.recent-articles {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 2rem 1rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>max-width: 1200px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin: 0 auto 4rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.articles-grid {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: grid;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gap: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 0 1rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.article-card {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 12px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: var(--bg-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transition: transform 0.2s ease;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.article-card:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transform: translateY(-4px);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.article-date {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-color-secondary);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.875rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.article-card h3 {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 1.25rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin: 1rem 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Resources Section */</span></p>
-<p class="p1"><span class="s1">.resources-section {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 2rem 1rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>max-width: 1200px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.resources-grid {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: grid;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gap: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 0 1rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.resource-card {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius: 12px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background: var(--bg-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transition: transform 0.2s ease;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-color);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.resource-card:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transform: translateY(-4px);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.resource-card i {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--follow-button-bg);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 1rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.resource-card h3 {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 1.25rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-bottom: 0.5rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.resource-card p {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: var(--text-color-secondary);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 0.875rem;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@media (max-width: 1080px) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0 32px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@media (max-width: 768px) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.mobile-menu-btn {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: block;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-menu {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>top: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>left: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>right: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: var(--bg-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 12px var(--shadow-color);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-menu.active {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tweets-grid {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>grid-template-columns: 1fr;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.page-title {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 32px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.hero-content p {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 18px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* Hide scrollbar for Chrome, Safari and Opera */</span></p>
-<p class="p1"><span class="s1">::-webkit-scrollbar {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: none;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Hide scrollbar for IE, Edge and Firefox */</span></p>
-<p class="p1"><span class="s1">* {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>-ms-overflow-style: none;<span class="Apple-converted-space">  </span>/* IE and Edge */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>scrollbar-width: none;<span class="Apple-converted-space">  </span>/* Firefox */</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header class="header" role="banner"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;nav class="nav-container" role="navigation"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="/" class="logo-container" aria-label="Legal Documentation Home"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;img src="https://pbs.twimg.com/profile_images/1877814846860775424/Bkh9Bs4E_400x400.jpg"<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                     </span>alt="Tate Brothers Cases Logo"<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                     </span>class="logo-image"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="logo-text"&gt;TateCase.com&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false"&gt;☰&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="nav-menu" role="menu"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="/home" class="nav-link" role="menuitem"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-home"&gt;&lt;/i&gt; Home</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="/documents" class="nav-link" role="menuitem"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-folder-open"&gt;&lt;/i&gt; Documents</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="/first-case" class="nav-link" role="menuitem"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                     </span>🇷🇴 1st Case</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="/second-case" class="nav-link" role="menuitem"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                     </span>🇷🇴 2nd Case</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="/second-case" class="nav-link" role="menuitem"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                     </span>🇬🇧 1st Case</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="nav-button" role="menuitem"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-envelope"&gt;&lt;/i&gt; Contact</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="theme-toggle" aria-label="Toggle theme"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-moon"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Add this after the header section, before the scripts --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;main class="main-content" id="main-content" role="main"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="hero-section"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="hero-content"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h1 class="page-title"&gt;Legal Documentation &amp; Case Analysis&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p class="hero-description"&gt;Comprehensive coverage and analysis of the Tate Brothers legal cases, including detailed timelines, court documents, and expert insights.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="hero-buttons"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;a href="/first-case" class="hero-button primary"&gt;🇷🇴 First Case&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;a href="/second-case" class="hero-button secondary"&gt;🇷🇴 Second Case&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;a href="/uk-case" class="hero-button secondary"&gt;🇬🇧 UK Case&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section class="featured-section"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Featured Updates&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="featured-grid"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;article class="featured-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card-image"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;img src="https://media.istockphoto.com/id/1346156815/photo/court-of-law-trial-in-session-honorable-female-judge-pronouncing-sentence-striking-gavel.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=3Td-m-56g9FkBiPZOesOugg6b394QYjDc1nBYLRdNao=" alt="Court Documents" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card-content"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="card-tag"&gt;Latest Update&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;New Evidence Emerges in Romanian Case&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Key developments and analysis of recently released court documents showing...&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;a href="/article/new-evidence" class="read-more"&gt;Read Full Analysis →&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/article&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;article class="featured-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card-image"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;img src="https://pbs.twimg.com/media/Gg_6I7ZXgAAmei6?format=jpg&amp;name=large" alt="Timeline Visualization" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="card-content"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="card-tag"&gt;Timeline&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;Complete Case Timeline: 2022-2024&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Comprehensive timeline of events, legal proceedings, and key moments...&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;a href="/timeline" class="read-more"&gt;View Timeline →&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/article&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section class="recent-articles"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Recent Articles&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="articles-grid"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;article class="article-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;By Murdered By Crayons.&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span class="article-date"&gt;March 15, 2024&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;Andrew Tate's old X (formerly Twitter) account is a masterclass&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;In the seedy underbelly of social media, there lurked an account that would become synonymous with toxic and degenerate content...&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;a href="/article/hearing-analysis" class="read-more"&gt;Continue Reading →&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/article&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;article class="article-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span class="article-date"&gt;March 12, 2024&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;Document Deep Dive: Understanding the Appeals&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Expert analysis of the appeals process and what it means for the case...&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;a href="/article/appeals-analysis" class="read-more"&gt;Continue Reading →&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/article&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;article class="article-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span class="article-date"&gt;March 8, 2024&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;International Legal Implications Explained&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;How these cases affect international law and cross-border prosecution...&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;a href="/article/international-impact" class="read-more"&gt;Continue Reading →&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/article&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section class="resources-section"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Essential Resources&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="resources-grid"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="/documents" class="resource-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-folder-open"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;Court Documents&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Access all official court filings and legal documents&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="/timeline" class="resource-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-clock"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;Case Timeline&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Chronological overview of all key events&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="/faq" class="resource-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-question-circle"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;FAQ&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Answers to commonly asked questions&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="/glossary" class="resource-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-book"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;Legal Glossary&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Key terms and definitions explained&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>&lt;!-- Scripts --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Theme management</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const themeToggle = document.querySelector('.theme-toggle');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const icon = themeToggle.querySelector('i');</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Check system preference and localStorage</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const getPreferredTheme = () =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const stored = localStorage.getItem('theme');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (stored) return stored;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const setTheme = (theme) =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.documentElement.setAttribute('data-theme', theme);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>localStorage.setItem('theme', theme);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Initialize theme</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>setTheme(getPreferredTheme());</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Toggle theme</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>themeToggle.addEventListener('click', () =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const current = document.documentElement.getAttribute('data-theme');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setTheme(current === 'dark' ? 'light' : 'dark');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Listen for system theme changes</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!localStorage.getItem('theme')) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>setTheme(e.matches ? 'dark' : 'light');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Mobile menu functionality</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const mobileMenuBtn = document.querySelector('.mobile-menu-btn');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const navMenu = document.querySelector('.nav-menu');</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>mobileMenuBtn.addEventListener('click', () =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const isExpanded = navMenu.classList.contains('active');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>navMenu.classList.toggle('active');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Twitter embed error handling</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function loadTwitterWidget() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const script = document.createElement('script');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>script.src = 'https://platform.twitter.com/widgets.js';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>script.async = true;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>script.charset = 'utf-8';</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>script.onerror = function() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>console.error('Failed to load Twitter widget');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.querySelectorAll('.tweet-container').forEach(container =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>container.innerHTML = '&lt;div class="error-message"&gt;Tweet could not be loaded&lt;/div&gt;';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.body.appendChild(script);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const twitterTimeout = setTimeout(() =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!window.twttr) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.querySelectorAll('.tweet-container').forEach(container =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>container.innerHTML = '&lt;div class="error-message"&gt;Tweet loading timed out&lt;/div&gt;';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}, 5000);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>loadTwitterWidget();</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Smooth scrolling for anchor links</span></p>
-<p class="p1"><span class="s1">document.querySelectorAll('a[href^="#"]').forEach(anchor =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>anchor.addEventListener('click', function (e) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>e.preventDefault();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.querySelector(this.getAttribute('href')).scrollIntoView({</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>behavior: 'smooth'</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p1"><span class="s1">});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">// Intersection Observer for fade-in animations</span></p>
-<p class="p1"><span class="s1">const observerOptions = {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>threshold: 0.1,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>rootMargin: '0px 0px -50px 0px'</span></p>
-<p class="p1"><span class="s1">};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">const observer = new IntersectionObserver((entries) =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>entries.forEach(entry =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (entry.isIntersecting) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>entry.target.classList.add('visible');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>observer.unobserve(entry.target);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p1"><span class="s1">}, observerOptions);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">// Observe all sections</span></p>
-<p class="p1"><span class="s1">document.querySelectorAll('section').forEach(section =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>section.style.opacity = '0';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>section.style.transform = 'translateY(20px)';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>observer.observe(section);</span></p>
-<p class="p1"><span class="s1">});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">// Add this CSS rule to your stylesheet</span></p>
-<p class="p1"><span class="s1">document.head.insertAdjacentHTML('beforeend', `</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>section.visible {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opacity: 1 !important;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(0) !important;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">`);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header" role="banner">
+        <nav class="nav-container" role="navigation">
+            <a href="/" class="logo-container" aria-label="Legal Documentation Home">
+                <img src="https://pbs.twimg.com/profile_images/1877814846860775424/Bkh9Bs4E_400x400.jpg" 
+                     alt="Tate Brothers Cases Logo" 
+                     class="logo-image">
+                <span class="logo-text">TateCase.com</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <div class="nav-menu" role="menu">
+                <a href="/home" class="nav-link" role="menuitem">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/documents" class="nav-link" role="menuitem">
+                    <i class="fas fa-folder-open"></i> Documents
+                </a>
+                <a href="/first-case" class="nav-link" role="menuitem">
+                     🇷🇴 1st Case
+                </a>
+                <a href="/second-case" class="nav-link" role="menuitem">
+                     🇷🇴 2nd Case
+                </a>
+                <a href="/second-case" class="nav-link" role="menuitem">
+                     🇬🇧 1st Case
+                </a>
+                <button class="nav-button" role="menuitem">
+                    <i class="fas fa-envelope"></i> Contact
+                </button>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add this after the header section, before the scripts -->
+    <main class="main-content" id="main-content" role="main">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="page-title">Legal Documentation & Case Analysis</h1>
+                <p class="hero-description">Comprehensive coverage and analysis of the Tate Brothers legal cases, including detailed timelines, court documents, and expert insights.</p>
+                <div class="hero-buttons">
+                    <a href="/first-case" class="hero-button primary">🇷🇴 First Case</a>
+                    <a href="/second-case" class="hero-button secondary">🇷🇴 Second Case</a>
+                    <a href="/uk-case" class="hero-button secondary">🇬🇧 UK Case</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="featured-section">
+            <h2 class="section-title">Featured Updates</h2>
+            <div class="featured-grid">
+                <article class="featured-card">
+                    <div class="card-image">
+                        <img src="https://media.istockphoto.com/id/1346156815/photo/court-of-law-trial-in-session-honorable-female-judge-pronouncing-sentence-striking-gavel.jpg?s=612x612&w=0&k=20&c=3Td-m-56g9FkBiPZOesOugg6b394QYjDc1nBYLRdNao=" alt="Court Documents" />
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Latest Update</span>
+                        <h3>New Evidence Emerges in Romanian Case</h3>
+                        <p>Key developments and analysis of recently released court documents showing...</p>
+                        <a href="/article/new-evidence" class="read-more">Read Full Analysis →</a>
+                    </div>
+                </article>
+                
+                <article class="featured-card">
+                    <div class="card-image">
+                        <img src="https://pbs.twimg.com/media/Gg_6I7ZXgAAmei6?format=jpg&name=large" alt="Timeline Visualization" />
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Timeline</span>
+                        <h3>Complete Case Timeline: 2022-2024</h3>
+                        <p>Comprehensive timeline of events, legal proceedings, and key moments...</p>
+                        <a href="/timeline" class="read-more">View Timeline →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="recent-articles">
+            <h2 class="section-title">Recent Articles</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <h3>By Murdered By Crayons.</h3>
+                    <span class="article-date">March 15, 2024</span>
+                    <h3>Andrew Tate's old X (formerly Twitter) account is a masterclass</h3>
+                    <p>In the seedy underbelly of social media, there lurked an account that would become synonymous with toxic and degenerate content...</p>
+                    <a href="/article/hearing-analysis" class="read-more">Continue Reading →</a>
+                </article>
+
+                <article class="article-card">
+                    <span class="article-date">March 12, 2024</span>
+                    <h3>Document Deep Dive: Understanding the Appeals</h3>
+                    <p>Expert analysis of the appeals process and what it means for the case...</p>
+                    <a href="/article/appeals-analysis" class="read-more">Continue Reading →</a>
+                </article>
+
+                <article class="article-card">
+                    <span class="article-date">March 8, 2024</span>
+                    <h3>International Legal Implications Explained</h3>
+                    <p>How these cases affect international law and cross-border prosecution...</p>
+                    <a href="/article/international-impact" class="read-more">Continue Reading →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="resources-section">
+            <h2 class="section-title">Essential Resources</h2>
+            <div class="resources-grid">
+                <a href="/documents" class="resource-card">
+                    <i class="fas fa-folder-open"></i>
+                    <h3>Court Documents</h3>
+                    <p>Access all official court filings and legal documents</p>
+                </a>
+                
+                <a href="/timeline" class="resource-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Case Timeline</h3>
+                    <p>Chronological overview of all key events</p>
+                </a>
+                
+                <a href="/faq" class="resource-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>FAQ</h3>
+                    <p>Answers to commonly asked questions</p>
+                </a>
+                
+                <a href="/glossary" class="resource-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Legal Glossary</h3>
+                    <p>Key terms and definitions explained</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+ <!-- Scripts -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+    <script>
+        // Theme management
+        const themeToggle = document.querySelector('.theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        
+        // Check system preference and localStorage
+        const getPreferredTheme = () => {
+            const stored = localStorage.getItem('theme');
+            if (stored) return stored;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        const setTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            localStorage.setItem('theme', theme);
+        };
+
+        // Initialize theme
+        setTheme(getPreferredTheme());
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = navMenu.classList.contains('active');
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('active');
+        });
+
+        // Twitter embed error handling
+        function loadTwitterWidget() {
+            const script = document.createElement('script');
+            script.src = 'https://platform.twitter.com/widgets.js';
+            script.async = true;
+            script.charset = 'utf-8';
+            
+            script.onerror = function() {
+                console.error('Failed to load Twitter widget');
+                document.querySelectorAll('.tweet-container').forEach(container => {
+                    container.innerHTML = '<div class="error-message">Tweet could not be loaded</div>';
+                });
+            };
+
+            document.body.appendChild(script);
+        }
+
+        const twitterTimeout = setTimeout(() => {
+            if (!window.twttr) {
+                document.querySelectorAll('.tweet-container').forEach(container => {
+                    container.innerHTML = '<div class="error-message">Tweet loading timed out</div>';
+                });
+            }
+        }, 5000);
+
+        loadTwitterWidget();
+
+        // Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(section);
+});
+
+// Add this CSS rule to your stylesheet
+document.head.insertAdjacentHTML('beforeend', `
+    <style>
+        section.visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+`);
+    </script>
 </body>
 </html>
